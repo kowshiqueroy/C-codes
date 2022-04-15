@@ -1,7 +1,4 @@
-
-
 #include<stdio.h>
-
 
 void main () {
 
@@ -35,7 +32,7 @@ case 0:
 
 }
 printf("\n");
-//main();
+main();
 }
 
 void add () {
