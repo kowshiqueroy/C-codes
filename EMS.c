@@ -13,6 +13,7 @@ int eid; //Employee ID
 char j[100]; //Employee Joining Date
 float s; //Employee Salary
 int nid; //Employee NID
+char status[20]; //Employee NID
 
 }emp;
 
@@ -91,10 +92,12 @@ scanf("%d", &nid);
 strcpy(a[counter].name,n);
 strcpy(a[counter].pos,p);
 strcpy(a[counter].j,j);
+strcpy(a[counter].status,"Continuing");
 a[counter].eid=counter+1;
 a[counter].s=s;
 a[counter].nid=nid;
 
+printf("EID: %d ", a[counter].eid);
 printf("Successfully Added");
 
 counter++;
@@ -141,7 +144,7 @@ strcpy(a[u-1].j,j);
 a[u-1].s=s;
 a[u-1].nid=nid;
 
-
+printf("EID: %d ", a[u-1].eid);
 printf("Successfully Updated");
 
 }
@@ -155,6 +158,11 @@ printf("Search Employee ID: ");
 
   scanf("%d", &u);
 
+  strcpy(a[u-1].status,"Discontinued");
+
+
+printf("EID: %d Removed", a[u-1].eid);
+
 }
 
 void search(){
@@ -166,7 +174,7 @@ printf("Search Employee ID: ");
 
   scanf("%d", &u);
 
-    printf("\n\nName: %s\nEID: %d\nPosition: %s\nJoined: %s\nSalary: %f\nNID: %d\n\n", a[u-1].name, a[u-1].eid, a[u-1].pos, a[u-1].j, a[u-1].s, a[u-1].nid);
+    printf("\n\nName: %s\nEID: %d\nPosition: %s\nJoined: %s\nSalary: %f\nNID: %d\nStatus: %s\n\n", a[u-1].name, a[u-1].eid, a[u-1].pos, a[u-1].j, a[u-1].s, a[u-1].nid, a[u-1].status);
 
 }
 
@@ -178,8 +186,10 @@ void view() {
     for (i=0; i<counter; i++) {
 
 
-        printf("\n\nName: %s\nEID: %d\nPosition: %s\nJoined: %s\nSalary: %f\nNID: %d\n\n", a[i].name, a[i].eid, a[i].pos, a[i].j, a[i].s, a[i].nid);
+            if (strcmp(a[i].status, "Discontinued")) {
 
+        printf("\n\nName: %s\nEID: %d\nPosition: %s\nJoined: %s\nSalary: %f\nNID: %d\nStatus: %s\n\n", a[i].name, a[i].eid, a[i].pos, a[i].j, a[i].s, a[i].nid, a[i].status);
+            }
     }
 }
 
