@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include <stdlib.h>
 
 int counter=0;
 
@@ -19,16 +20,17 @@ emp a[];
 void main(){
 
 
-
 printf("SHIKHO Employee Management System\n");
 printf("Press 1 for ADD, Press 2 for UPDATE, Press 3 for REMOVE, Press 4 for SEARCH, Press 5 for VIEW, Press 0 for EXIT\n");
 int s;
 scanf("%d", &s);
 
+
 switch(s) {
 
 case 1:
     add();
+
     break;
 
 case 2:
@@ -55,6 +57,8 @@ case 0:
 
 }
 printf("\n");
+
+
 main();
 
 
@@ -64,19 +68,13 @@ main();
 
 
 void add() {
-
-
-
-
-
+    clrscr();
+    printf("ADD\n");
 char n[100], p[100], j[100];
 int e,nid;
 float s;
 printf("Enter Name: ");
 scanf("%s", &n);
-
-//printf("Enter EID: ");
-//scanf("%d", &e);
 
 printf("Enter Position: ");
 scanf("%s", &p);
@@ -108,6 +106,8 @@ counter++;
 
 void update()
 {
+    clrscr();
+    printf("UPDATE\n");
   printf("Update Employee ID: ");
   int u;
 
@@ -150,12 +150,19 @@ printf("Successfully Updated");
 }
 
 void removef() {
+    clrscr();
+    printf("REMOVE\n");
 
-printf("remove is working");
+printf("Search Employee ID: ");
+  int u;
+
+  scanf("%d", &u);
 
 }
 
 void search(){
+    clrscr();
+    printf("SEARCH\n");
 
 printf("Search Employee ID: ");
   int u;
@@ -167,6 +174,8 @@ printf("Search Employee ID: ");
 }
 
 void view() {
+    clrscr();
+    printf("VIEW\n");
     int i;
 
     for (i=0; i<counter; i++) {
@@ -178,4 +187,8 @@ void view() {
 
 
 
+}
+
+void clrscr() {
+system("@cls||clear");
 }
