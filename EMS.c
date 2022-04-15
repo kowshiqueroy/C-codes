@@ -53,8 +53,6 @@ case 0:
     return 0;
      break;
 
-
-
 }
 printf("\n");
 
@@ -68,8 +66,8 @@ main();
 
 
 void add() {
-    clrscr();
-    printf("ADD\n");
+clrscr();
+printf("ADD\n");
 char n[100], p[100], j[100];
 int e,nid;
 float s;
@@ -96,7 +94,6 @@ strcpy(a[counter].j,j);
 a[counter].eid=counter+1;
 a[counter].s=s;
 a[counter].nid=nid;
-
 
 printf("Successfully Added");
 
@@ -184,9 +181,6 @@ void view() {
         printf("\n\nName: %s\nEID: %d\nPosition: %s\nJoined: %s\nSalary: %f\nNID: %d\n\n", a[i].name, a[i].eid, a[i].pos, a[i].j, a[i].s, a[i].nid);
 
     }
-
-
-
 }
 
 void clrscr() {
