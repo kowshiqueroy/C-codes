@@ -4,7 +4,7 @@
 
 int counter=0;
 
-
+//Commmmmmmment
 typedef  struct emp1 {
 
 char name[100]; //Employee Name
