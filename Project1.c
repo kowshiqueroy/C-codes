@@ -47,40 +47,61 @@ int teacherCount=0;
 int studentCount=0;
 
 
-void main()
-{
-    printf("As a Student press 1\nAs a Teacher press 2\nAs an Admin press 3\nExit press 0 \nPlease press:");
-    int n;
-    scanf("%d", &n);
-
-
-    switch (n)
-    {
-        case 1: studentFunc();
-        break;
-
-        case 2: teacherFunc();
-        break;
-
-        case 3: adminFunc();
-        break;
-
-        case 0: return 0;
-        break;
-        default:printf("Wrong Input");
-        main();
-
-    }
-}
 
 
 void studentFunc()
 {
 
+studentMenu();
 }
+
+void studentMenu()
+{
+    printf("1.View Student: \n2.View Teacher: \n3.Main Menu: \n");
+    int n;
+    scanf("%d", &n);
+    switch(n)
+    {
+    case 1:
+        studentview();
+        break;
+    case 2:
+        ///teacherview();
+        break;
+    case 3:
+        main();
+        break;
+    }
+
+
+
+    }
+
+
+
+    void studentview() {
+
+int i;
+    for (i=0;i<studentCount;i++) {
+
+        if (! strcmp(s[i].Status, "Under-Grad")) {
+
+            printf("Name: %s\n", s[i].Name);
+            printf("Name: %f\n", s[i].CGPA);
+
+
+        }
+
+
+    }
+
+
+
+    }
 void teacherFunc()
 {
-
+///teacherMenu();
+studentMenu();
 }
 void adminFunc()
 {
@@ -318,5 +339,35 @@ adminMenu();
    void adminLogout(){
 
 main();
+/// if (a==1) {adminFlag=0;} else if (a==2) {studentFlad}
 
     }
+///1200
+
+
+
+int main()
+{
+    printf("As a Student press 1\nAs a Teacher press 2\nAs an Admin press 3\nExit press 0 \nPlease press:");
+    int n;
+    scanf("%d", &n);
+
+
+    switch (n)
+    {
+        case 1: studentFunc();
+        break;
+
+        case 2: teacherFunc();
+        break;
+
+        case 3: adminFunc();
+        break;
+
+        case 0: return 0;
+        break;
+        default:printf("Wrong Input");
+        main();
+return 0;
+    }
+}
